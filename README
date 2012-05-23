@@ -1,0 +1,52 @@
+
+WHAT IS GO?
+
+Do you often type something like.. "cd ../../../foo/dir/dir" in order 
+to navigate to the directory back and forth? Instead, you can use "g". 
+
+When you install "go", you can type "g" on your command prompt which 
+will list commonly visited directories. You can then select the path 
+you want to go to, and boom! you will be there!!
+
+INSTALLATION
+
+1. Download go package. Install it wherever you want.
+2. Add following to your ~/.bashrc
+
+. /go-installation-dir/go.source
+
+3. Re-login to your shell, or re-source your .bashrc
+
+
+USING GO
+
+From the command line, type "g". You will see a list of default
+directory. Navigating inside g is somewhat similar to nativeting in 
+vi. In order to exit, type "q". To go up and down in the list, use
+j(up) or k(down). If you want to expand a certain path, move to the
+path and type l(left). It will list all child directories. In order 
+to go to the parent directory, type h(right).
+
+When you want to jump to the directory, hit enter. You will be 
+automatically move to the location. g will also execute a command
+specified in the "source" file. Default is "ls". 
+
+If you want to remove a directory from the list, just type x on the
+item. If you want to edit the list itself, you can open ~/.gofilepath
+file and edit the list.
+
+G will automatically add directy that you are gone to by hitting 
+enter key to the directory list.
+
+
+BUG REPORT
+
+If you see any bug and if you can't figure out how to fix it, please
+send me an email at soichih@gmail.com If you find a bug and know
+a solution, please don't hesitate to send me your solution!!
+
+
+11/16/2007 - Soichi Hayashi
+
+
+
