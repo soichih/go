@@ -19,7 +19,12 @@ function g {
         if [ -f $GO_SHELL_SCRIPT ] ; then
             source $GO_SHELL_SCRIPT
             pwd
-            ls -lart
+            if [ -f ".go" ]; then
+                bash .go
+            else
+                ls -lart
+            fi
+
         fi
     else
         echo "g error: could not find go.py your PATH"
