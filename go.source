@@ -22,7 +22,7 @@ function g {
             if [ -f ".go" ]; then
                 bash .go
             else
-                ls -lart
+                ls -lrt
             fi
 
         fi

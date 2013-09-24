@@ -38,6 +38,8 @@ file and edit the list.
 G will automatically add directy that you are gone to by hitting 
 enter key to the directory list.
 
+If you need to add a path manually to the list, you can simplly edit ~/.gopath
+
 
 BUG REPORT
 
