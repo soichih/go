@@ -129,7 +129,7 @@ def main(stdscr):
             #store the location and exit
             path = os.environ["GO_SHELL_SCRIPT"] 
             f = open(path, "w")
-            f.write("cd "+sel+"\nexport "+last_path_env+"="+str(current)+"\nrm -f " + path)
+            f.write("cd \""+sel+"\"\nexport "+last_path_env+"="+str(current)+"\nrm -f " + path)
             f.close()
             break
 
