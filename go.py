@@ -40,7 +40,7 @@ def main(stdscr):
     #aliased or linked
     last_path_env = "LAST_GO_PATH_INDEX"
     current = 0
-    if os.environ.has_key(last_path_env):
+    if last_path_env in os.environ:
         current = int(os.environ[last_path_env])
     if len(paths) <= current:
         current = len(paths)-1
@@ -64,7 +64,7 @@ def main(stdscr):
             stdscr.addstr(current - scrollpos, 0, paths[current], curses.A_REVERSE)
             previous = current
         except:
-            print "can't find ",current
+            print("can't find ",current)
 
         stdscr.refresh()
         
@@ -78,7 +78,7 @@ def main(stdscr):
                 newpath = "/".join(sel[0:-1])
             if newpath == "":
                 newpath = "/";
-	    paths[current] = newpath
+            paths[current] = newpath
             redraw(stdscr, scrollpos)
         elif c == curses.KEY_RIGHT or c == ord('l'): 
             #expand path
@@ -87,8 +87,8 @@ def main(stdscr):
             for d in os.listdir(paths[current]):
                 if paths[current] == "/":
                     newpath = "/" + d
-		else: 
-		    newpath = paths[current]+"/"+d
+                else: 
+                    newpath = paths[current]+"/"+d
                 if os.path.isdir(newpath):
                     if search(paths, newpath) == -1:
                         paths.insert(insertpos, newpath)
