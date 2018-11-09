@@ -20,7 +20,9 @@ function g {
             source $GO_SHELL_SCRIPT
             pwd
             if [ -f ".go" ]; then
-                bash .go
+                cat .go
+                bash .go 
+                cd -
             else
                 ls -lrt
             fi
