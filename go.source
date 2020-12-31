@@ -3,7 +3,8 @@
 #source this script in your ~/.bashrc
 
 #path the directory where go is installed
-selfdir=${BASH_SOURCE%/*}
+#selfdir=${BASH_SOURCE%/*}
+selfdir=$(dirname "$(readlink -f "$0")")
 export PATH=$PATH:$selfdir
 
 #this is where list of directory is stored.
@@ -11,11 +12,12 @@ export GO_PATH_FILE=$HOME/.gopathfile
 export LAST_GO_PATH_INDEX=0
 
 #the g function will call go and jump to new location if selected
-function g {
+function j {
+  echo "calling g"
     go_is_on_path="`\which go.py`"
     if test -e "$go_is_on_path"; then
         export GO_SHELL_SCRIPT=$HOME/.__tmp_go.sh
-        python `\which go.py` $*
+        python3 `\which go.py` $*
         if [ -f $GO_SHELL_SCRIPT ] ; then
             source $GO_SHELL_SCRIPT
             pwd
@@ -32,6 +34,7 @@ function g {
         echo "g error: could not find go.py your PATH"
     fi
 }
+
 
 #reset putty title
 #function settitle() { echo -ne "\e]2;$@\a\e]1;$@\a"; }
